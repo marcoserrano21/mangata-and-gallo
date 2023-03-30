@@ -11,7 +11,7 @@
 
 html {
     scroll-snap-type: mandatory;
-    scroll-snap-points-y: repeat(10vh);
+    scroll-snap-points-y: repeat(100vh);
     scroll-snap-type: y mandatory;
 }
 
@@ -129,10 +129,6 @@ nav ul li a:hover::after {
     color: var(--clr-dark);
 }
 
-section {
-    display: flex;
-}
-
 .column {
     float: left;
     width: 50%;
@@ -151,15 +147,43 @@ section {
     left: 10%;
 }
 
-article {
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid {
+    display: grid;
+    width: 100vw;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    align-items: stretch;
+    justify-items: center;
+  }
+  
+  .grid > article {
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
+  }
+  
+  .grid > article img {
+    max-width: 100%;
     flex: 1;
-}
+    object-fit: cover;
+  }
+  
+  .grid .text {
+    padding: 20px;
+  }
+  
 
-.products__container {
+footer {
     display: flex;
-
-}
-
-footer > div {
-    display: flex;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    justify-content: space-between;
+    margin-top: 50px;
 }
